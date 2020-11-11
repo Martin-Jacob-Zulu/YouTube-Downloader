@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from pytube.cli import on_progress
 from pytube import YouTube
 import os
 
@@ -15,7 +16,7 @@ def yt_download(request):
     global url
     url = request.GET.get('url')
     try:
-        obj = YouTube(url)
+        obj = YouTube(url, on_progress_callback=on_progress)
         resolutions = []
         strm_all = obj.streams.filter(file_extension='mp4').all()
         for i in strm_all:

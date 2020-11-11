@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="circular">
+    <div class="inner">
+        <div class="circle">
+            <div class="bar left">
+                <div class="progress"></div>
+            </div>
+            <div class="bar right">
+                <div class="progress"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html, body {
+        display: grid;
+        height: 100%;
+        text-align: center;
+        place-items: center;
+        background: #dde6f0;
+    }
+    .circular {
+        height: 200px;
+        width: 200px;
+        background: red;
+        position: relative;
+        transform: scale(2)
+    }
+    .circular .inner {
+        position: absolute;
+        z-index: 6;
+        top: 50%;
+        left: 160px;
+        width: 160px;
+        margin: -40px 0 0 -40px;
+        background: #dde6f0;
+        border-radius: 100%;
+        box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+    }
+    .circular .bar {
+
+    }
+</style>
+
+{% endblock %}

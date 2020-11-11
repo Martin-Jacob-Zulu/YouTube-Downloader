@@ -1,36 +1,39 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<br><br><br>
-<container>
+<div class="container">
+    <br><br><br>
+
     <div class="jumbotron">
-    <h1 class="display-4">Hello, world!</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
-        featured content or information.</p>
-    <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-</div>
-</container>
-
-<br><br>
-<container>
-    <center><h1>Paste YouTube link here</h1></center>
-</container>
-<br>
-
-<container>
-    <form action="download/" method="get">
-    <div class="form-group">
-        <input name="url" placeholder="Paste YouTube link here" type="text" class="form-control" id="exampleInputEmail1"
-               aria-describedby="emailHelp">
+        <h1 class="display-4">YouTube Downloader</h1>
+        <p class="lead">With this software, you can download all the videos you wish to download from youtube in just a
+            few steps. Follow the instructions below to complete your YouTube video downloading.</p>
+        <hr class="my-4">
+        <p>For more cool software and internet services visit <a href="#">stewitantech.com</a></p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
     </div>
-    <br>
-    <center>
-        <button type="submit" class="btn btn-primary">Download</button>
-    </center>
 
-</form>
-</container>
+
+    <br><br>
+    <container>
+        <center><h1>Paste YouTube link here</h1></center>
+    </container>
+    <br>
+
+    <container>
+        <form action="download/" method="get">
+            <div class="form-group">
+                <input name="url" placeholder="Paste YouTube link here" type="text" class="form-control"
+                       id="exampleInputEmail1"
+                       aria-describedby="emailHelp">
+            </div>
+            <br>
+            <center>
+                <button type="submit" class="btn btn-primary">Download</button>
+            </center>
+
+        </form>
+    </container>
+</div>
 {% endblock %}
 
