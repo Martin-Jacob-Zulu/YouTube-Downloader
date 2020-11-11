@@ -17,7 +17,7 @@ def yt_download(request):
     try:
         obj = YouTube(url)
         resolutions = []
-        strm_all = obj.streams.all()
+        strm_all = obj.streams.filter(file_extension='mp4').all()
         for i in strm_all:
             resolutions.append(i.resolution)
         resolutions = list(dict.fromkeys(resolutions))
