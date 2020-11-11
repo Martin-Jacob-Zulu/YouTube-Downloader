@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br><br><br>
+<container>
+    <div class="jumbotron">
+    <h1 class="display-4">Hello, world!</h1>
+    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
+        featured content or information.</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+</div>
+</container>
+
+<br><br>
+<container>
+    <center><h1>Paste YouTube link here</h1></center>
+</container>
+<br>
+
+<container>
+    <form action="download/" method="get">
+    <div class="form-group">
+        <input name="url" placeholder="Paste YouTube link here" type="text" class="form-control" id="exampleInputEmail1"
+               aria-describedby="emailHelp">
+    </div>
+    <br>
+    <center>
+        <button type="submit" class="btn btn-primary">Download</button>
+    </center>
+
+</form>
+</container>
+{% endblock %}
+

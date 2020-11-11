@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <br><br>
+    <div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src={{embed}} allowfullscreen></iframe>
+</div>
+</div>
+
+<div class="container">
+    <br><br>
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Select Resolution</th>
+            <th scope="col">Download</th>
+        </tr>
+        </thead>
+
+        {% for i in resolutions %}
+
+        <tbody>
+        <tr>
+            <td>{{i}}</td>
+            <td>
+                <form action="{% url 'download_complete' i %}" method="POST" class="post-form"> {% csrf_token %} <input type="submit" class="btn btn-success" value="Download"></form>
+            </td>
+        </tr>
+        </tbody>
+
+        {% endfor %}
+
+    </table>
+
+</div>
+
+{% endblock %}
