@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from .models import Guide, Jumbotron
 from pytube.cli import on_progress
 from pytube import YouTube
 import os
