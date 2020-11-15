@@ -70,10 +70,10 @@ WSGI_APPLICATION = 'server.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dbhel7t3g9h2as',
-        'USER': 'mgsejdtqwxnxhd',
-        'PASSWORD': '9c1173a5973477992483d86e9bd4ccba51674cc1ebf8ce8301bf2576621db7b2',
-        'HOST': 'ec2-34-204-121-199.compute-1.amazonaws.com',
+        'NAME': 'youtube_downloader',
+        'USER': 'postgres',
+        'PASSWORD': 'never@give.up',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
@@ -119,6 +119,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 WHITENOISE_USE_FINDERS = True
 
