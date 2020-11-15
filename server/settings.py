@@ -14,7 +14,8 @@ SECRET_KEY = '#7tqc)74qkz58c9+8x4e=$!tizsc6#an%r8z8%w%o3jkci%)(#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com',
+                 'git.heroku.com/taruja-youtube-downloader.git']
 
 
 # Application definition
