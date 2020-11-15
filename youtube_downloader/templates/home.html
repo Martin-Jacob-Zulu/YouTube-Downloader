@@ -1,24 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container" style="background: orange">
-    <br><br><br>
+<div class="container" style="">
+    <br><br>
 
-    <div class="jumbotron" style="background: grey">
-        <h1 class="display-4">YouTube Downloader</h1>
+    <div class="jumbotron" style="background: #b3d9ff">
+        <h1 class="display-4 my-0">YouTube Downloader</h1>
         <p class="lead">With this software, you can download all the videos you wish to download from youtube in just a
             few steps. Follow the instructions below to complete your YouTube video downloading.</p>
         <hr class="my-4">
-        <p>For more cool software and internet services visit <a href="#">stewitantech.com</a></p>
+        <p>For more cool software and internet services visit <a href="https://www.stewitantech.com" target="_blank">stewitantech.com</a>
+        </p>
         <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
     </div>
 
 
-    <br><br>
     <container>
         <center><h1>Paste YouTube link here</h1></center>
     </container>
-    <br>
 
     <container>
         <form action="download/" method="get">
@@ -27,81 +26,35 @@
                        id="exampleInputEmail1"
                        aria-describedby="emailHelp">
             </div>
-            <br>
             <center>
-                <button type="submit" class="btn btn-primary">Download</button>
+                <button type="submit" class="btn btn-warning">Download</button>
             </center>
 
         </form>
-        <div>
-            <br><br>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="alert alert-danger">
-                        <div class="card text-center">
-                            <div class="card-header">
-                                Featured
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="alert alert-danger">
-                        <div class="card text-center">
-                            <div class="card-header">
-                                Featured
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="alert alert-danger">
-                        <div class="card text-center">
-                            <div class="card-header">
-                                Featured
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="alert alert-danger">
-                        <div class="card text-center">
-                            <div class="card-header">
-                                Featured
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </container>
+    <div>
+        <br><br>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            {% for guide in guides %}
+            <div class="col-md-6">
+                <div class="card text-center" style="background: #b3d9ff">
+                    <div class="card-header">
+                        {{guide.step_count}}
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{guide.header}}</h5>
+                        <p class="card-text">{{guide.step_description}}</p>
+                    </div>
+                </div>
+                <br>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
 </div>
 {% endblock %}
 

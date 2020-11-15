@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Download Complete</title>
-</head>
-<body>
-Download complete please check your Downloads folder.
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+<br><br>
+<div class="jumbotron jumbotron-fluid" style="background: #b3d9ff">
+  <div class="container">
+    <h1 class="display-4">CONGRATULATIONS!!!</h1>
+    <p class="lead">Your video has downloaded successfully and you can find it in the downloads folder.</p>
+  </div>
+</div>
+
+{% endblock %}

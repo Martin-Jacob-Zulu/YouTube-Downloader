@@ -6,7 +6,7 @@ class JumbotronAdmin(admin.ModelAdmin):
     list_display = ('title', 'footer')
 
 class GuideAdmin(admin.ModelAdmin):
-    list_display = ('header', 'stet_count')
+    list_display = ('header', 'step_count')
 
 
 admin.site.register(Jumbotron, JumbotronAdmin)

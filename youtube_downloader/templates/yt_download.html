@@ -5,16 +5,17 @@
 <div class="container">
     <br><br>
     <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src={{embd}} allowfullscreen></iframe>
-</div>
+        <iframe class="embed-responsive-item" src={{embd}} allowfullscreen></iframe>
+    </div>
 </div>
 
 <div class="container">
     <br><br>
 
-    <table class="table">
-        <thead class="thead-dark">
+    <table class="table table-striped table-warning">
+        <thead>
         <tr>
+            <th scope="col"></th>
             <th scope="col">Select Resolution</th>
             <th scope="col">Download</th>
         </tr>
@@ -24,9 +25,12 @@
 
         <tbody>
         <tr>
+            <td></td>
             <td>{{i}}</td>
             <td>
-                <form action="{% url 'download_complete' i %}" method="POST" class="post-form"> {% csrf_token %} <input type="submit" class="btn btn-success" value="Download"></form>
+                <form action="{% url 'download_complete' i %}" method="POST" class="post-form"> {% csrf_token %}
+                    <input type="submit" class="btn btn-success" value="Download">
+                </form>
             </td>
         </tr>
         </tbody>
@@ -34,6 +38,12 @@
         {% endfor %}
 
     </table>
+    <br>
+
+        <a href="{% url 'home' %}">
+            <center><h1>Download Another Video</h1></center>
+        </a>
+
 
 </div>
 

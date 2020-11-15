@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.shortcuts import render, redirect
 from .models import Guide, Jumbotron
 from pytube.cli import on_progress
@@ -7,10 +8,17 @@ import os
 
 url = ''
 
+
 def home_view(request):
-    context = {}
+    guides = Guide.objects.all()
+    jumbotron = Jumbotron.objects.all()
+    context = {
+        'guides': guides,
+        'jumbotron': jumbotron
+    }
     template = 'home.html'
     return  render(request, template, context)
+
 
 def yt_download(request):
 
@@ -19,7 +27,7 @@ def yt_download(request):
     try:
         obj = YouTube(url, on_progress_callback=on_progress)
         resolutions = []
-        strm_all = obj.streams.filter(file_extension='mp4').all()
+        strm_all = obj.streams.filter(file_extension='mp4')
         for i in strm_all:
             resolutions.append(i.resolution)
         resolutions = list(dict.fromkeys(resolutions))
@@ -28,7 +36,8 @@ def yt_download(request):
         path = 'D:\\'
         return render(request, 'yt_download.html', {'resolutions': resolutions, 'embd': embed_link})
     except:
-        return render(request, 'sorry.html')
+        raise Http404
+
 
 def download_complete(request, res):
     global url
@@ -39,4 +48,4 @@ def download_complete(request, res):
         YouTube(url).streams.first().download(homedir + '/Downloads')
         return render(request, 'download_complete.html')
     else:
-        return render(request, 'sorry.html')
+        raise Http404
